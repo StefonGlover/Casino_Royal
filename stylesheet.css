@@ -4,9 +4,9 @@
  }
  
  body {
-   background-image: url("./images/pokerbackground.jpg");
+   background-image: url("./images/pokerr.jpg");
    font-size: 8pt;
-   font-family: cursive;
+   font-family: trajan;
    background-position: center;
    background-size: cover;
 
@@ -17,12 +17,12 @@
  #banner{
   background-color: black;
   width: 100%;
-  height: 85px;
+  height: 65px;
   margin-bottom: 20px;
 }
 
 #banner-text {
-  font-family: cursive;
+  font-family: trajan;
   color: white;
   text-align: center;
   font-size: 40pt;
@@ -33,29 +33,38 @@
    margin-left: auto;
    margin-right: auto;
  }
+.take_{
+  animation: rotation 2s ease-in-out 5s forwards;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  margin-top:-50px;
+  margin-left: 20px;
+  transform: translateY(-500%);
+}
 
  .profile-pic {
-   height: 250px;
-   width: 250px;
+   height: 150px;
+   width: 150px;
    border-radius: 10px;
    animation: rotation 2s;
  }
 
  th, td{
-   font-family: cursive;
+   font-family: trajan;
    font-size: large;
    color: white;
  }
 
  table#players {
    border-collapse: separate;  
-   border-spacing: 20px;
+   border-spacing: 30px;
   
   }
 
   #content {
-    width: 80%;
-    height: 1000px;
+    width: 70%;
+    height: 600px;
     margin-left: auto;
     margin-right: auto;
     border: 5px solid white;
@@ -80,8 +89,8 @@ table#player2-hand {
 }
 
 .card {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   transition-duration: 5s;
   
   
@@ -122,15 +131,15 @@ table#player2-hand {
   background-color: black; /* Green */
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   margin: 4px 2px;
   position: absolute;
-  left: 50%;
-  margin-top: 50px;
+  left: 49%;
+  margin-top: 70px;
 }
 
 #play-button:hover {
@@ -172,4 +181,98 @@ table#player2-hand {
   }
   
   
+}
+.firework {
+	position: absolute;
+}
+.explosion {
+	position: absolute;
+	left: -2px;
+	bottom: 0;
+	width: 4px;
+	height: 80px;
+	transform-origin: 50% 100%;
+
+	overflow: hidden;
+}
+.explosion:nth-child(1) {
+	transform: rotate(0deg) translateY(-15px);
+}
+.explosion:nth-child(2) {
+	transform: rotate(30deg) translateY(-15px);
+}
+.explosion:nth-child(3) {
+	transform: rotate(60deg) translateY(-15px);
+}
+.explosion:nth-child(4) {
+	transform: rotate(90deg) translateY(-15px);
+}
+.explosion:nth-child(5) {
+	transform: rotate(120deg) translateY(-15px);
+}
+.explosion:nth-child(6) {
+	transform: rotate(150deg) translateY(-15px);
+}
+.explosion:nth-child(7) {
+	transform: rotate(180deg) translateY(-15px);
+}
+.explosion:nth-child(8) {
+	transform: rotate(210deg) translateY(-15px);
+}
+.explosion:nth-child(9) {
+	transform: rotate(240deg) translateY(-15px);
+}
+.explosion:nth-child(10) {
+	transform: rotate(270deg) translateY(-15px);
+}
+.explosion:nth-child(11) {
+	transform: rotate(300deg) translateY(-15px);
+}
+.explosion:nth-child(12) {
+	transform: rotate(330deg) translateY(-15px);
+}
+
+.explosion::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	height: 40px;
+	background-color: blue;
+}
+@keyframes explosion {
+	0% {
+		top: 100%;
+	}
+	33%, 100% {
+		top: -50%;
+	}
+}
+
+#firework1 {
+	left: 50%;
+	top: 50%;
+	transform: scale(1);
+}
+#firework1 .explosion::before {
+	animation: explosion 2s ease-in-out infinite;
+}
+
+#firework2 {
+	left: 40%;
+	top: 45%;
+	transform: scale(.7);
+}
+#firework2 .explosion::before {
+	animation: explosion 2s .6s ease-in-out infinite;
+}
+
+#firework3 {
+	left: 60%;
+	top: 65%;
+	transform: scale(.4);
+}
+#firework3 .explosion::before {
+	animation: explosion 2s .4s ease-in-out infinite;
 }
